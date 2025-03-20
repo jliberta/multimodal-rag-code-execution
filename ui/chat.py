@@ -332,7 +332,7 @@ async def main(message: cl.Message):
         elif cmd == 'pdf_mode':
             res = await cl.AskUserMessage(content="What is the PDF extraction mode?", timeout=1000).send()
             if res:
-                pdf_extraction_mode = res['output'].strip().upper()
+                pdf_extraction_mode = res['output'].strip().lower()
                 if pdf_extraction_mode in ['gpt-4-vision', 'document-intelligence']:
                     pdf_extraction_modes[cl.user_session.get("id")] = pdf_extraction_mode
                     await update_task_list()
