@@ -363,7 +363,7 @@ async def main(message: cl.Message):
                 except:
                     pass
 
-        elif cmd == 'topN': 
+        elif cmd == 'top_n': 
             res = await cl.AskUserMessage(content="What is the Top N for the Search Results?", timeout=1000).send()
             if res:
                 log_message(res)
